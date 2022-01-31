@@ -47,6 +47,18 @@ int value(std::vector <char> hand) {
   return value; 
 }
 
+bool play(std::vector <char> hand, char dealer,std::vector <char> otherCards) {
+
+  int v = value(hand); 
+//  std::cout << "Hand value: " << v << '\n'; 
+ if(v<=14){
+  return true;
+ }
+  return false;
+
+}
+
+
 float play_blackjack(int number_of_decks) {
   // Returns the result: player wins -> 1
   //                     player loss -> -1
@@ -143,7 +155,7 @@ float play_blackjack(int number_of_decks) {
 }
 
 int main() {
-  const int number_of_games = 1;   
+  const int number_of_games = 15;   
   const int number_of_decks = 4;
   
   for (int game=0; game<number_of_games; game++) {
